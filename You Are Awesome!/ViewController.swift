@@ -22,5 +22,10 @@ class ViewController: UIViewController {
         messageLabel.text = "You Are Awesome!"
     }
     
+    @IBAction func showAnotherMessagePressed(_ sender: Any) {
+        messageLabel.text = "You Are Great!"
+    }
+    
+    
 }
 
