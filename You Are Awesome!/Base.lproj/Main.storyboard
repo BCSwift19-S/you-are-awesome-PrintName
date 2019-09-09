@@ -18,23 +18,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-SV-oe2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="8uL-SV-oe2">
                                 <rect key="frame" x="18" y="20" width="284" height="94"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="94" id="unr-aH-JRZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
                                 <color key="textColor" red="0.35909164507772018" green="0.038897682458181981" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e94-op-Fe1">
-                                <rect key="frame" x="108" y="122" width="104" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e94-op-Fe1">
+                                <rect key="frame" x="90" y="122" width="140" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Ri6-LB-v7N"/>
+                                    <constraint firstAttribute="width" constant="140" id="eJy-n2-w1q"/>
+                                </constraints>
                                 <state key="normal" title="Show Message"/>
                                 <connections>
                                     <action selector="showMessagePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L4q-5i-7hU"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="image0" translatesAutoresizingMaskIntoConstraints="NO" id="7cq-cl-XcQ">
+                                <rect key="frame" x="16" y="160" width="286" height="388"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7cq-cl-XcQ" secondAttribute="trailing" constant="18" id="3aL-nc-V1S"/>
+                            <constraint firstItem="7cq-cl-XcQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="8jP-uL-hbA"/>
+                            <constraint firstItem="8uL-SV-oe2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="99G-h8-mna"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="8uL-SV-oe2" secondAttribute="trailing" constant="18" id="Ath-QA-ihr"/>
+                            <constraint firstItem="e94-op-Fe1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TQT-WD-DV9"/>
+                            <constraint firstItem="e94-op-Fe1" firstAttribute="top" secondItem="8uL-SV-oe2" secondAttribute="bottom" constant="8" id="Tfe-qY-YAI"/>
+                            <constraint firstItem="7cq-cl-XcQ" firstAttribute="top" secondItem="e94-op-Fe1" secondAttribute="bottom" constant="8" id="w6h-YS-diM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="7cq-cl-XcQ" secondAttribute="bottom" constant="20" id="yjL-JF-yxz"/>
+                            <constraint firstItem="8uL-SV-oe2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="18" id="zoX-qf-nGx"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
@@ -46,4 +65,7 @@
             <point key="canvasLocation" x="136.875" y="111.97183098591549"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image0" width="1536" height="2048"/>
+    </resources>
 </document>
