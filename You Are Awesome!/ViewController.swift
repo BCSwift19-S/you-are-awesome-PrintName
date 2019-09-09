@@ -7,15 +7,18 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
     @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var awersomeImageView: UIImageView!
+    var awesomePlayer = AVAudioPlayer()
     var index = -1
     var imageIndex = -1
     let numberOfImages = 4
-    
-    @IBOutlet weak var awersomeImageView: UIImageView!
+    var soundIndex = -1
+    let numberOfSounds = 3
     
     // Code below executes when the app's view first loads
     override func viewDidLoad() {
@@ -39,6 +42,7 @@ class ViewController: UIViewController {
         
         var newIndex = -1
         
+        // Show a message
         repeat {
             newIndex = Int.random(in: 0..<messages.count)
         } while index == newIndex
@@ -46,6 +50,7 @@ class ViewController: UIViewController {
         index = newIndex
         messageLabel.text = messages[index]
         
+        // Show an image
         repeat {
             newIndex = Int.random(in: 0..<numberOfImages)
         } while imageIndex == newIndex
@@ -53,6 +58,30 @@ class ViewController: UIViewController {
         imageIndex = newIndex
         awersomeImageView.image = UIImage(named: "image\(imageIndex)")
         
+        // Get a random number to use in our soundName file
+        repeat {
+            newIndex = Int.random(in: 0..<numberOfSounds)
+        } while soundIndex == newIndex
+        soundIndex = newIndex
+        
+        // Play a sound
+        let soundName = "sound\(soundIndex)"
+        
+        // Can we load in the file soundName?
+        if let sound = NSDataAsset(name: soundName) {
+            // Check if sound.data is a sound file
+            do {
+                try awesomePlayer = AVAudioPlayer(data: sound.data)
+                awesomePlayer.play()
+            } catch {
+                // if sound.data is not a valid audio file
+                print("Error: data in \(soundName) couldn't be played as a sound.")
+            }
+        }
+        else {
+            // if reading in the NSDataAsset didn't work
+            print("ERROR: file \(soundName) didn't load")
+        }
     }
     
 }
