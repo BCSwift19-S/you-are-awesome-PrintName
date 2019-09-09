@@ -57,7 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="awersomeImageView" destination="7cq-cl-XcQ" id="avh-j4-NfV"/>
+                        <outlet property="awesomeImageView" destination="7cq-cl-XcQ" id="avh-j4-NfV"/>
                         <outlet property="messageLabel" destination="8uL-SV-oe2" id="wPF-Fb-ucG"/>
                     </connections>
                 </viewController>
